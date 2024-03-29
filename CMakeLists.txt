@@ -43,6 +43,7 @@ add_executable(${PROJECT_NAME}_node
   src/k4a_ros_bridge_node.cpp
   src/k4a_ros_device.cpp
   src/k4a_ros_device_params.cpp
+  src/k4a_ros_color_params.cpp
   src/k4a_calibration_transform_data.cpp
   )
 
