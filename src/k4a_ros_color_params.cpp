@@ -50,7 +50,7 @@ bool K4AROSColorParams::SetColorConfig(k4a::device &device)
 
   if (brightness >= 0 && brightness <= 255)
   {
-    RCLCPP_INFO_STREAM(this->get_logger(), "Setting brightness to:" << brightness);
+    RCLCPP_INFO_STREAM(this->get_logger(), "Setting brightness to: " << brightness);
     device.set_color_control(K4A_COLOR_CONTROL_BRIGHTNESS, K4A_COLOR_CONTROL_MODE_MANUAL, brightness);
   }
   else
@@ -61,7 +61,7 @@ bool K4AROSColorParams::SetColorConfig(k4a::device &device)
 
   if (contrast >= 0 && contrast <= 10)
   {
-    RCLCPP_INFO_STREAM(this->get_logger(), "Setting contrast to:" << contrast);
+    RCLCPP_INFO_STREAM(this->get_logger(), "Setting contrast to: " << contrast);
     device.set_color_control(K4A_COLOR_CONTROL_CONTRAST, K4A_COLOR_CONTROL_MODE_MANUAL, contrast);
   }
   else
@@ -72,7 +72,7 @@ bool K4AROSColorParams::SetColorConfig(k4a::device &device)
 
   if (saturation >= 0 && contrast <= 63)
   {
-    RCLCPP_INFO_STREAM(this->get_logger(), "Setting saturation to:" << saturation);
+    RCLCPP_INFO_STREAM(this->get_logger(), "Setting saturation to: " << saturation);
     device.set_color_control(K4A_COLOR_CONTROL_SATURATION, K4A_COLOR_CONTROL_MODE_MANUAL, saturation);
   }
   else
@@ -83,7 +83,7 @@ bool K4AROSColorParams::SetColorConfig(k4a::device &device)
 
   if (sharpness >= 0 && sharpness <= 4)
   {
-    RCLCPP_INFO_STREAM(this->get_logger(), "Setting sharpness to:" << sharpness);
+    RCLCPP_INFO_STREAM(this->get_logger(), "Setting sharpness to: " << sharpness);
     device.set_color_control(K4A_COLOR_CONTROL_SHARPNESS, K4A_COLOR_CONTROL_MODE_MANUAL, sharpness);
   }
   else
@@ -94,7 +94,7 @@ bool K4AROSColorParams::SetColorConfig(k4a::device &device)
 
   if (gain >= 0 && gain <= 255)
   {
-    RCLCPP_INFO_STREAM(this->get_logger(), "Setting gain to:" << gain);
+    RCLCPP_INFO_STREAM(this->get_logger(), "Setting gain to: " << gain);
     device.set_color_control(K4A_COLOR_CONTROL_GAIN, K4A_COLOR_CONTROL_MODE_MANUAL, gain);
   }
   else
