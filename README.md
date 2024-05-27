@@ -7,7 +7,7 @@ This repository uses the [Azure Kinect Sensor SDK](https://github.com/microsoft/
 ## Dependencies
 ```
 cd --
-sudo apt install libsoundio
+sudo apt install libsoundio2
 wget https://github.com/asukiaaa/Azure-Kinect-Sensor-SDK/releases/download/2923-08-26-ubuntu-22-04/libk4a1.4_1.4.1_amd64.deb
 sudo dpkg -i libk4a1.4_1.4.1_amd64.deb
 rm libk4a1.4_1.4.1_amd64.deb
