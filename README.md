@@ -12,6 +12,9 @@ wget https://github.com/asukiaaa/Azure-Kinect-Sensor-SDK/releases/download/2923-
 sudo dpkg -i libk4a1.4_1.4.1_amd64.deb
 rm libk4a1.4_1.4.1_amd64.deb
 sudo ldconfig
+
+pip3 install xacro
+sudo apt install ros-humble-joint-state-publisher
 ```
 
 # INSTALL AZURE KINECT ROS DRIVER
