@@ -68,7 +68,7 @@ set_target_properties(${PROJECT_NAME}_node PROPERTIES OUTPUT_NAME node PREFIX ""
 #### AZURE KINECT SDK ######
 ############################
 
-message("Finding K4A SDK binaries")
+message(STATUS "Finding K4A SDK binaries")
 
 # Disable cached locations for K4A SDK binaries.
 # Do this to force the search logic to happen correctly.
@@ -80,7 +80,7 @@ message("Finding K4A SDK binaries")
 unset(k4a_DIR CACHE)
 
 # Force running the Findk4a.cmake module
-find_package(k4a 1.3.0 QUIET MODULE REQUIRED)
+find_package(k4a 1.4.1 QUIET MODULE REQUIRED)
 set(K4A_LIBS k4a::k4a;k4a::k4arecord)
 
 # Try to find and enable the body tracking SDK
@@ -90,7 +90,7 @@ if (k4abt_FOUND)
   message(STATUS "Body Tracking SDK found: compiling support for Body Tracking")
   target_compile_definitions(${PROJECT_NAME}_node PUBLIC K4A_BODY_TRACKING)
 else()
-  message("!!! Body Tracking SDK not found: body tracking features will not be available !!!")
+  message(STATUS "!!! Body Tracking SDK not found: body tracking features will not be available !!!")
 endif()
 
 # This reads the K4A_LIBS and K4A_INSTALL_REQUIRED variables and decides how to install
