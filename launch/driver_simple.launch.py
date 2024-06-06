@@ -2,7 +2,7 @@ import launch
 import launch.actions
 import launch.substitutions
 import launch_ros.actions
-
+import os
 
 def generate_launch_description():
     azure_kinect_ros_driver_node = launch_ros.actions.Node(
@@ -18,8 +18,8 @@ def generate_launch_description():
             {'color_resolution': '1080P'},
             {'fps': 30},
             {'point_cloud': True},
-            {'rgb_point_cloud': False},
-            {'point_cloud_in_depth_frame': False},
+            {'rgb_point_cloud': True},
+            {'point_cloud_in_depth_frame': True},
             {'imu_rate_target': 0},
             {'exposure_auto': True},
             {'exposure_time': 15000},
@@ -32,9 +32,14 @@ def generate_launch_description():
             {'gain': 128}
         ]
     )
+    azure_kinect_debugger_node = launch_ros.actions.Node(
+        package='azure_kinect_debugger',
+        executable='kinect_subscriber'    
+    )
 
     return launch.LaunchDescription([
-        azure_kinect_ros_driver_node
+        azure_kinect_ros_driver_node,
+        azure_kinect_debugger_node,
     ])
 
 
