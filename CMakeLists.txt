@@ -80,7 +80,7 @@ message(STATUS "Finding K4A SDK binaries")
 unset(k4a_DIR CACHE)
 
 # Force running the Findk4a.cmake module
-find_package(k4a 1.4.1 QUIET MODULE REQUIRED)
+find_package(k4a 1.4.0 QUIET MODULE REQUIRED)
 set(K4A_LIBS k4a::k4a;k4a::k4arecord)
 
 # Try to find and enable the body tracking SDK
@@ -115,9 +115,6 @@ target_link_libraries(${PROJECT_NAME}_node
 
 ## Mark executables and/or libraries for installation
 install(TARGETS ${PROJECT_NAME}_node
-  ARCHIVE DESTINATION lib
-  LIBRARY DESTINATION lib
-  RUNTIME DESTINATION bin
   DESTINATION lib/${PROJECT_NAME}
 )
 
